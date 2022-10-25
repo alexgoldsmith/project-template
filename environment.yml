@@ -1,8 +1,0 @@
-name: base
-channels:
-  - defaults
-dependencies:
-  - git
-  - python=3.8.5
-  - pip=20.3
-  - pip:

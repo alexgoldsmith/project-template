@@ -1,1 +1,1 @@
-# Template Repository that supports miniconda and node
+# Template Repository that supports node and poetry

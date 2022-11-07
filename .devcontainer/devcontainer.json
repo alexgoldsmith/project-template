@@ -2,10 +2,8 @@
 {
 	"name": "node-poetry",
 	"dockerComposeFile": "docker-compose.yml",
-	"service": "primary",
-	// https://code.visualstudio.com/remote/advancedcontainers/change-default-source-mount
-	"workspaceMount": "source=repository,target=/workspace,type=volume",
-	"workspaceFolder": "/workspace",
+	"service": "app",
+	// github codespaces always clones repo to /workspaces/<repo-name>
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [5432],
 	"build": {
@@ -18,7 +16,10 @@
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode",
 	// Configure tool-specific properties.
-	// "postStartCommand": [],
+	"postStartCommand": [
+		"conda",
+		"activate base"
+	],
 	"customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
